@@ -1,7 +1,7 @@
 hrs = float(input("Enter Hours:"))
 rate = float(input("Enter PayRate:"))
 
-# With Overtime Pay
+# With Overtime Pay Calculation
 if hrs > 40: 
     Overtime = hrs - 40
     Regulartime = 40 - Overtime 
@@ -9,7 +9,7 @@ if hrs > 40:
     OvertimePay = Overtime * rate * 1.5
     ActualPay = RegularPay + OvertimePay
 
-# No Overtime Pay
+# No Overtime Pay Calculation
 elif hrs <= 40:
     RegularPay = hrs * rate
     ActualPay = RegularPay
@@ -17,7 +17,6 @@ elif hrs <= 40:
 print(ActualPay)
 
 
-# Function for Compute Pay
 def computepay(h, r):
     h = float(h)
     r = float(r)
