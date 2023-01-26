@@ -21,7 +21,7 @@ class Employee_Payrate():
     
     def BiWeeklyPayTrack(OvertimeHours = 80):
         # BiWeekly Payrate
-        hrs = float(input("Enter Hours Worked In Past 7 Days: "))
+        hrs = float(input("Enter Hours Worked In Past 14 Days: "))
         rate = float(input("Enter PayRate: "))
 
         # With Overtime Pay Calculation
