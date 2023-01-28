@@ -25,5 +25,6 @@ class HRTool():
         return 0
 
 if __name__ == "__main__":
-    Weekly_Pay_Amount = HRTool.TotalPay(Weekly_Hours, Over_Time_Multiplier, 7)
+    # Comment Out the Pay Method that the Business does not want to use
+    # Weekly_Pay_Amount = HRTool.TotalPay(Weekly_Hours, Over_Time_Multiplier, 7)
     Bi_Weekly_Pay_Amount = HRTool.TotalPay(Bi_Weekly_Hours, Over_Time_Multiplier, 14)
