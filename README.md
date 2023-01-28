@@ -1,1 +1,1 @@
-Simple Payroll Tracking Algorithm for HR Systems
+Simple Payroll Tracking Toole for an HR System
