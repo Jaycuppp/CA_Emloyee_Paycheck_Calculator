@@ -1,43 +1,27 @@
-class Employee_Payrate():
-    def WeeklyPayTrack(OvertimeHours = 40):
+class WeeklyPayRate():
+    def TotalPay(Over_Time_Hours = 40, Over_Time_Multiplier = 1.5):
         # Weekly Payrate
         hrs = float(input("Enter Hours Worked In Past 7 Days: "))
         rate = float(input("Enter PayRate: "))
 
         # With Overtime Pay Calculation
-        if hrs > OvertimeHours: 
-            Overtime = hrs - OvertimeHours
+        if hrs > Over_Time_Hours: 
+            Overtime = hrs - Over_Time_Hours
             Regulartime = hrs - Overtime 
             RegularPay = Regulartime * rate
-            OvertimePay = Overtime * rate * 1.5
+            OvertimePay = Overtime * rate * Over_Time_Multiplier
             ActualPay = RegularPay + OvertimePay
 
         # No Overtime Pay Calculation
-        elif hrs <= OvertimeHours:
+        elif hrs <= Over_Time_Hours:
             RegularPay = hrs * rate
             ActualPay = RegularPay
 
         print(f"Here is your paycheck amount for the past week {ActualPay}")
-    
-    def BiWeeklyPayTrack(OvertimeHours = 80):
-        # BiWeekly Payrate
-        hrs = float(input("Enter Hours Worked In Past 14 Days: "))
-        rate = float(input("Enter PayRate: "))
+        return 0
 
-        # With Overtime Pay Calculation
-        if hrs > OvertimeHours: 
-            Overtime = hrs - OvertimeHours
-            Regulartime = hrs - Overtime 
-            RegularPay = Regulartime * rate
-            OvertimePay = Overtime * rate * 1.5
-            ActualPay = RegularPay + OvertimePay
+class BiWeeklyPayRate(WeeklyPayRate):
+    pass
 
-        # No Overtime Pay Calculation
-        elif hrs <= OvertimeHours:
-            RegularPay = hrs * rate
-            ActualPay = RegularPay
-
-        print(f"Here is your paycheck amount for the past week {ActualPay}")
-
-Employee_Payrate.WeeklyPayTrack()
-Employee_Payrate.BiWeeklyPayTrack()
+WeeklyPayRate.TotalPay()
+BiWeeklyPayRate.TotalPay(80, 1.5)
