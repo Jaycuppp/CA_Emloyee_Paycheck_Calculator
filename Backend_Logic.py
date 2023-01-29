@@ -2,6 +2,7 @@ Weekly_Hours = 40
 Bi_Weekly_Hours = 80
 Over_Time_Multiplier = 1.5
 
+
 class HRTools():
     def TotalPay(Standard_Work_Hours, Over_Time_Multiplier, Days_Worked):
         # Vars Needed for Payrate Calc to work
@@ -21,9 +22,8 @@ class HRTools():
             RegularPay = Total_Hours_Worked * Pay_Rate
             ActualPay = RegularPay
 
-        Result = print(f"Here is your paycheck amount for the past {Days_Worked} days: ${ActualPay}")
-        return Result
-
+        return print(f"Here is your paycheck amount for the past {Days_Worked} days: ${ActualPay}")
+    
 
 if __name__ == "__main__":
         Employee_Choice = str(input("Hello, Enter one of the following\n1) Paycheck Amount for past 1 Week of Work \n2) Paycheck Amount for past 2 Weeks of Work\n"))
