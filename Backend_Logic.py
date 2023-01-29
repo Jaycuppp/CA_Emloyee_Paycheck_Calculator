@@ -21,8 +21,8 @@ class HRTools():
             RegularPay = Total_Hours_Worked * Pay_Rate
             ActualPay = RegularPay
 
-        print(f"Here is your paycheck amount for the past {Days_Worked} days: ${ActualPay}")
-        return 0
+        Result = print(f"Here is your paycheck amount for the past {Days_Worked} days: ${ActualPay}")
+        return Result
 
 
 if __name__ == "__main__":
