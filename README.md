@@ -1,1 +1,1 @@
-Simple 💰 Payroll Tracking Toole for an HR System
+Simple 💰 Payroll Tracking Tool for an HR System
