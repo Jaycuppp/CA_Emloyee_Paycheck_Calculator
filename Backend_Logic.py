@@ -2,29 +2,36 @@ Weekly_Hours = 40
 Bi_Weekly_Hours = 80
 Over_Time_Multiplier = 1.5
 
-class HRTool():
-    def TotalPay(Weekly_Hours, Over_Time_Multiplier, Days_Worked):
-        # Weekly Payrate
-        hrs = float(input(f"Enter Hours Worked In Past {Days_Worked} Days: "))
-        rate = float(input("Enter PayRate: "))
+class HRTools():
+    def TotalPay(Standard_Work_Hours, Over_Time_Multiplier, Days_Worked):
+        # Vars Needed for Payrate Calc to work
+        Total_Hours_Worked = float(input(f"Enter Hours Worked In Past {Days_Worked} Days: "))
+        Pay_Rate = float(input("Enter PayRate: "))
 
         # With Overtime Pay Calculation
-        if hrs > Weekly_Hours: 
-            Overtime = hrs - Weekly_Hours
-            Regulartime = hrs - Overtime 
-            RegularPay = Regulartime * rate
-            OvertimePay = Overtime * rate * Over_Time_Multiplier
+        if Total_Hours_Worked > Standard_Work_Hours: 
+            Overtime = Total_Hours_Worked - Standard_Work_Hours
+            Regulartime = Total_Hours_Worked - Overtime 
+            RegularPay = Regulartime * Pay_Rate
+            OvertimePay = Overtime * Pay_Rate * Over_Time_Multiplier
             ActualPay = RegularPay + OvertimePay
 
         # No Overtime Pay Calculation
-        elif hrs <= Weekly_Hours:
-            RegularPay = hrs * rate
+        elif Total_Hours_Worked <= Standard_Work_Hours:
+            RegularPay = Total_Hours_Worked * Pay_Rate
             ActualPay = RegularPay
 
         print(f"Here is your paycheck amount for the past {Days_Worked} days: ${ActualPay}")
         return 0
 
+
 if __name__ == "__main__":
-    # Comment Out the Pay Method that the Business does not want to use
-    # Weekly_Pay_Amount = HRTool.TotalPay(Weekly_Hours, Over_Time_Multiplier, 7)
-    Bi_Weekly_Pay_Amount = HRTool.TotalPay(Bi_Weekly_Hours, Over_Time_Multiplier, 14)
+        Employee_Choice = str(input("Hello, Enter one of the following\n1) Paycheck Amount for past 1 Week of Work \n2) Paycheck Amount for past 2 Weeks of Work\n"))
+
+        while Employee_Choice != "1" and Employee_Choice != "2":
+            Employee_Choice = input("Sorry Invalid Choice. Please enter the numerical value for one of these choicses\n1) Paycheck Amount for past 1 Week of Work\n2)Paycheck Amount for past 2 Weeks of Work\n")
+
+        if Employee_Choice == '1':
+            Weekly_Pay_Amount = HRTools.TotalPay(Weekly_Hours, Over_Time_Multiplier, 7)
+        if Employee_Choice == '2':
+             Bi_Weekly_Pay_Amount = HRTools.TotalPay(Bi_Weekly_Hours, Over_Time_Multiplier, 14)
