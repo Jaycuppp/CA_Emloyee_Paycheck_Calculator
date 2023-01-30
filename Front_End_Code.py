@@ -1,3 +1,3 @@
-import HR_PayRate_Tracker_BackEnd
+import BackEnd_Logic.py
 from tkinter import *
 from tkinter import ttk
