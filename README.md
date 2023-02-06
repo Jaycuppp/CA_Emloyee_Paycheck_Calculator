@@ -1,1 +1,1 @@
-Simple 💰 Payroll Tracking Tool for an HR System
+A Simple Human Resource Helper Program with a tool for tracking Employee Payroll 💰
