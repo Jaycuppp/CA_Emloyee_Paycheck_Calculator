@@ -80,13 +80,16 @@ if __name__ == "__main__":
     One_Week = 7
     Two_Weeks = 14
 
-    Employee_Choice = str(input("Hello, Enter one of the following\n1) Paycheck Amount for past 1 Week of Work \n2) Paycheck Amount for past 2 Weeks of Work\n"))
+    Employee_Choice = str(input("Hello, Enter one of the following\n1) Paycheck Amount for past 1 Week of Work \n2) Paycheck Amount for past 2 Weeks of Work\n3) Quit the Program"))
 
     while Employee_Choice != "1" and Employee_Choice != "2":
-        Employee_Choice = input("Sorry Invalid Choice. Please enter the numerical value for one of these choicses\n1) Paycheck Amount for past 1 Week of Work\n2) Paycheck Amount for past 2 Weeks of Work\n")
+        Employee_Choice = input("Sorry Invalid Choice. Please enter the numerical value for one of these choicses\n1) Paycheck Amount for past 1 Week of Work\n2) Paycheck Amount for past 2 Weeks of Work\n3) Quit the Program")
 
     if Employee_Choice == '1':
         Weekly_Pay_Amount = HRTools.Total_Pay(Weekly_Hours, Over_Time_Multiplier, One_Week)
         
     if Employee_Choice == '2':
             Bi_Weekly_Pay_Amount = HRTools.Total_Pay(Bi_Weekly_Hours, Over_Time_Multiplier, Two_Weeks)
+            
+    elif Employee_Choice == 'q' or Employee_Choice == 'Q':
+            print("You exited the program. Have a Nice Day :) ")
