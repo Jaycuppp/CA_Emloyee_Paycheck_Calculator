@@ -33,25 +33,31 @@ class HRTools():
         elif Total_Hours_Worked <= Standard_Work_Hours:
             ActualPay = Total_Hours_Worked * Pay_Rate
 
-        # Tax Calculation In California
+        # Tax Brack 1
         if 0 < Pay_Rate <= Tax_Threshold_One:
             Income_Tax_Percentage = 0.10
 
+        # Tax Bracket 2
         elif Tax_Threshold_One < Pay_Rate <= Tax_Threshold_Two :
             Income_Tax_Percentage = 0.12
 
+        # Tax Bracket 3
         elif Tax_Threshold_Two < Pay_Rate <= Tax_Threshold_Three:
             Income_Tax_Percentage = 0.22
-        
+            
+        # Tax Bracket 4       
         elif Tax_Threshold_Three < Pay_Rate <= Tax_Threshold_Four:
             Income_Tax_Percentage = 0.24
-
+            
+        # Tax Bracket 5
         elif Tax_Threshold_Four < Pay_Rate <= Tax_Threshold_Five:
             Income_Tax_Percentage = 0.32
-
+            
+        # Tax Bracket 6
         elif Tax_Threshold_Five < Pay_Rate <= Tax_Threshold_Six:
             Income_Tax_Percentage = 0.35
-
+            
+        # Tax Bracket 7
         elif Tax_Threshold_Six < Pay_Rate:
             Income_Tax_Percentage = 0.37
 
