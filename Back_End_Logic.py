@@ -1,6 +1,6 @@
 class HRTools():
     def Total_Pay(Standard_Work_Hours, Over_Time_Multiplier, Days_Worked):
-        # California Tax Rate Thresholds based on Hourly Pay Rates 
+        # California Tax Rate Thresholds based on Hourly Pay Rates in USD $
         Tax_Threshold_One = 5.72916667
         Tax_Threshold_Two = 23.2942708
         Tax_Threshold_Three = 49.6744792
