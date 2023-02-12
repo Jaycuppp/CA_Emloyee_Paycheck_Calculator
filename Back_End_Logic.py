@@ -1,5 +1,6 @@
 class HRTools():
     def Total_Pay(Standard_Work_Hours, Over_Time_Multiplier, Days_Worked):
+        
         # California Tax Rate Thresholds based on Hourly Pay Rates in USD $
         Tax_Threshold_One = 5.72916667
         Tax_Threshold_Two = 23.2942708
@@ -7,6 +8,15 @@ class HRTools():
         Tax_Threshold_Four = 94.84375
         Tax_Threshold_Five = 120.442708
         Tax_Threshold_Six = 310.106771
+        
+        # California Income Tax Bracket %s So Far for the Year of 2023
+        Tax_Bracket_One = 0.10
+        Tax_Bracket_Two = 0.12
+        Tax_Bracket_Three = 0.22
+        Tax_Bracket_Four = 0.24
+        Tax_Bracket_Five = 0.32
+        Tax_Bracket_Six = 0.35
+        Tax_Bracket_Seven = 0.37
 
         
         # Getting Correct Total Hours Worked
@@ -33,33 +43,33 @@ class HRTools():
         elif Total_Hours_Worked <= Standard_Work_Hours:
             ActualPay = Total_Hours_Worked * Pay_Rate
 
-        # Tax Brack 1
+        # Tax Brack 1 Condition
         if 0 < Pay_Rate <= Tax_Threshold_One:
-            Income_Tax_Percentage = 0.10
+            Income_Tax_Percentage = Tax_Bracket_One
 
-        # Tax Bracket 2
+        # Tax Bracket 2 Condition
         elif Tax_Threshold_One < Pay_Rate <= Tax_Threshold_Two :
-            Income_Tax_Percentage = 0.12
+            Income_Tax_Percentage = Tax_Bracket_Two
 
-        # Tax Bracket 3
+        # Tax Bracket 3 Condition
         elif Tax_Threshold_Two < Pay_Rate <= Tax_Threshold_Three:
-            Income_Tax_Percentage = 0.22
+            Income_Tax_Percentage = Tax_Bracket_Three
             
-        # Tax Bracket 4       
+        # Tax Bracket 4 Condition   
         elif Tax_Threshold_Three < Pay_Rate <= Tax_Threshold_Four:
-            Income_Tax_Percentage = 0.24
+            Income_Tax_Percentage = Tax_Bracket_Four
             
-        # Tax Bracket 5
+        # Tax Bracket 5 Condition
         elif Tax_Threshold_Four < Pay_Rate <= Tax_Threshold_Five:
-            Income_Tax_Percentage = 0.32
+            Income_Tax_Percentage = Tax_Bracket_Five
             
-        # Tax Bracket 6
+        # Tax Bracket 6 Condition
         elif Tax_Threshold_Five < Pay_Rate <= Tax_Threshold_Six:
-            Income_Tax_Percentage = 0.35
+            Income_Tax_Percentage = Tax_Bracket_Six
             
-        # Tax Bracket 7
+        # Tax Bracket 7 Condition
         elif Tax_Threshold_Six < Pay_Rate:
-            Income_Tax_Percentage = 0.37
+            Income_Tax_Percentage = Tax_Bracket_Seven
 
         # Now Factoring In the Tax Rate
         Amount_Taxed = ActualPay * Income_Tax_Percentage
