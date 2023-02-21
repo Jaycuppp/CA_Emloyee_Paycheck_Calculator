@@ -99,7 +99,7 @@ if __name__ == "__main__":
         Weekly_Pay_Amount = HRTools.Total_Pay(Weekly_Hours, Over_Time_Multiplier, One_Week)
         
     if Employee_Choice == '2':
-            Bi_Weekly_Pay_Amount = HRTools.Total_Pay(Bi_Weekly_Hours, Over_Time_Multiplier, Two_Weeks)
+        Bi_Weekly_Pay_Amount = HRTools.Total_Pay(Bi_Weekly_Hours, Over_Time_Multiplier, Two_Weeks)
             
     elif Employee_Choice == 'q' or Employee_Choice == 'Q':
             print("You exited the program. Have a Nice Day :) ")
