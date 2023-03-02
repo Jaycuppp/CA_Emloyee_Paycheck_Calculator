@@ -47,8 +47,7 @@ class HRTools():
         except UnboundLocalError and ValueError:
             CorrectPay(Pay_Rate, Days_Worked)
         
-        while Pay_Rate < 0:
-            Pay_Rate = float(input("Invalid Input.\nEnter a Payrate above 0"))
+        
         # With Overtime Pay Calculation
         if Total_Hours_Worked > Standard_Work_Hours: 
             Overtime = Total_Hours_Worked - Standard_Work_Hours
