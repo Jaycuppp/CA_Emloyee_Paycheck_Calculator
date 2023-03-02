@@ -1,3 +1,12 @@
+# Reusable Exception Handlings
+def CorrectHours(Hours, Days_Worked):
+    while (Hours < 0):
+        Hours = float(input(f'''Invalid Input.\n Enter Hours worked above 0 in the past {Days_Worked} days: '''))
+
+def CorrectPay(Pay, Days_Worked):
+    while (Pay < 0):
+        Pay = float(input("Invalid Input.\nEnter a Payrate above 0"))
+
 class HRTools():
     def Total_Pay(Standard_Work_Hours, Over_Time_Multiplier, Days_Worked):
         
@@ -19,18 +28,27 @@ class HRTools():
         Tax_Bracket_Seven = 0.37
 
         
-        # Getting Correct Total Hours Worked
+        # Getting The Correct Total Hours Worked
         Total_Hours_Worked = float(input(f"Enter Hours Worked In Past {Days_Worked} Days: "))
         
-        while (Total_Hours_Worked < 0):
-            Total_Hours_Worked = float(input(f"Invalid Input.\nEnter Hours worked above 0 in the past {Days_Worked} days: "))
+        try:
+            CorrectHours(Total_Hours_Worked, Days_Worked)
+                
+        except TypeError and ValueError:
+            CorrectHours(Total_Hours_Worked, Days_Worked)
         
-        # Getting Correct Payrate
-        Pay_Rate = float(input("Enter PayRate: "))
+
+        # Getting The Correct Payrate
+        Pay_Rate = float(input("Enter Hourly Payrate: "))
+
+        try:
+            CorrectPay(Pay_Rate, Days_Worked)
+
+        except UnboundLocalError and ValueError:
+            CorrectPay(Pay_Rate, Days_Worked)
         
         while Pay_Rate < 0:
             Pay_Rate = float(input("Invalid Input.\nEnter a Payrate above 0"))
-
         # With Overtime Pay Calculation
         if Total_Hours_Worked > Standard_Work_Hours: 
             Overtime = Total_Hours_Worked - Standard_Work_Hours
