@@ -1,7 +1,7 @@
 # Reusable Exception Handlings
 def CorrectHours(Hours, Days_Worked):
     while (Hours < 0):
-        Hours = float(input(f'''Invalid Input.\n Enter Hours worked above 0 in the past {Days_Worked} days: '''))
+        Hours = float(input(f'''Invalid Input.\nEnter Hours worked above 0 in the past {Days_Worked} days: '''))
 
 def CorrectPay(Pay, Days_Worked):
     while (Pay < 0):
