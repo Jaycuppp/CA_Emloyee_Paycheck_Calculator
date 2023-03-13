@@ -3,10 +3,12 @@ from tkinter import *
 def Run():
     root = Tk()
     root.title("HR Helper Tool")
+    root.configure(background="#FFFFFF")
 
     # Frame for Root Widget
     frame = LabelFrame(root, padx=20, pady=20)
     frame.pack(padx=5, pady=5)
+    frame.configure(background="#FFFFFF")
 
     
     # Function for calling the correct version of the Payroll Logic
@@ -78,14 +80,14 @@ def Run():
                 Rounded_Post_Tax_Pay = round(Post_Tax_Pay, 2)
 
                 # Displaying the Post Calculation Results
-                Pre_Tax_Income_Label = Label(Top, text=f"Total Pre Tax Payment: ${Rounded_Pre_Tax_Pay}")
-                Pre_Tax_Income_Label.grid(row=3, column=0, columnspan=3, pady=4)
+                Pre_Tax_Income_Label = Label(Top, text=f"Total Pre Tax Payment: ${Rounded_Pre_Tax_Pay}", background="#FFFFFF")
+                Pre_Tax_Income_Label.grid(row=3, column=0, pady=4)
 
-                Income_Getting_Taxed_Label = Label(Top, text=f"Total Being Taxed: ${Rounded_Amount_Taxed}")
-                Income_Getting_Taxed_Label.grid(row=4, column=0, columnspan=3, pady=4)
+                Income_Getting_Taxed_Label = Label(Top, text=f"Total Being Taxed: ${Rounded_Amount_Taxed}", background="#FFFFFF")
+                Income_Getting_Taxed_Label.grid(row=4, column=0, pady=4)
 
-                Post_Tax_Income_Label = Label(Top, text=f"Total Post Tax Payment: ${Rounded_Post_Tax_Pay}")
-                Post_Tax_Income_Label.grid(row=5, column=0, columnspan=3, pady=4)
+                Post_Tax_Income_Label = Label(Top, text=f"Total Post Tax Payment: ${Rounded_Post_Tax_Pay}", background="#FFFFFF")
+                Post_Tax_Income_Label.grid(row=5, column=0, pady=4)
 
                 def ClearAll():
                     Pre_Tax_Income_Label.after(0, Pre_Tax_Income_Label.destroy())
@@ -93,34 +95,35 @@ def Run():
                     Post_Tax_Income_Label.after(0, Post_Tax_Income_Label.destroy())
                     Clear_Button.after(0, Clear_Button.destroy())
                     
-                Clear_Button = Button(Top, text="Clear Above Results", command=ClearAll)
+                Clear_Button = Button(Top, text="Clear Above Results", command=ClearAll, background="#f93800", fg="#ffb500")
                 Clear_Button.grid(row=6, column=0, columnspan=3, pady=4)
 
             
             # Setup for the 2nd Window
             Top = Toplevel()
             Top.title('Weekly Payroll')
-            Top.geometry("300x200")
+            Top.geometry("250x200")
+            Top.configure(background="#FFFFFF")
             
             # Hours Worked Lable,Input, and Button
-            Hour_Label = Label(Top, text="Hours Worked:")
+            Hour_Label = Label(Top, text="Hours Worked:", background="#FFFFFF")
             Hour_Label.grid(row=0, column=0)
 
-            Hour_Entry = Entry(Top, width=10)
+            Hour_Entry = Entry(Top, width=10, background="#FFFFFF")
             Hour_Entry.grid(row=0, column=1)
             Hour_Entry.insert(0, 'Enter Here')
 
             # Input Box and Label for Hourly Wage
-            Wage_Label = Label(Top, text="Hourly Wage:")
+            Wage_Label = Label(Top, text="Hourly Wage:", background="#FFFFFF")
             Wage_Label.grid(row=1, column=0)
 
-            Wage_Entry = Entry(Top, width=10)
+            Wage_Entry = Entry(Top, width=10, background="#FFFFFF")
             Wage_Entry.grid(row=1, column=1)
             Wage_Entry.insert(0, 'Enter Here')
 
             # Result Button After Inputs Have Been Made
-            Results_Button = Button(Top, text="Calculate Payroll", command=Weekly_Payroll_Calculation)
-            Results_Button.grid(row=2, column=0, columnspan=2, pady=2)
+            Calculate_Payroll_Button = Button(Top, text="Calculate Payroll", command=Weekly_Payroll_Calculation, background="#0f4d19", fg="#6fc27c")
+            Calculate_Payroll_Button.grid(row=2, column=0, columnspan=2, pady=2)
 
 
         if Parameter == 'Bi-Weekly':
@@ -189,55 +192,56 @@ def Run():
                 Rounded_Amount_Taxed = round(Amount_Taxed, 2)
                 Rounded_Post_Tax_Pay = round(Post_Tax_Pay, 2)
 
-                Pre_Tax_Income_Label = Label(Top, text=f"Total Pre-Tax Payment: {Rounded_Pre_Tax_Pay}")
-                Pre_Tax_Income_Label.grid(row=3, column=0, columnspan=2, pady=4)
+                Pre_Tax_Income_Label = Label(Top, text=f"Total Pre-Tax Payment: {Rounded_Pre_Tax_Pay}", background="#FFFFFF")
+                Pre_Tax_Income_Label.grid(row=3, column=0, pady=4)
 
-                Income_Getting_Taxed_Label = Label(Top, text=f"Total Being Taxed: {Rounded_Amount_Taxed}")
+                Income_Getting_Taxed_Label = Label(Top, text=f"Total Being Taxed: {Rounded_Amount_Taxed}", background="#FFFFFF")
                 Income_Getting_Taxed_Label.grid(row=4, column=0, pady=4)
 
-                Post_Tax_Income_Label = Label(Top, text=f"Total Post-Tax Payment: {Rounded_Post_Tax_Pay}")
+                Post_Tax_Income_Label = Label(Top, text=f"Total Post-Tax Payment: {Rounded_Post_Tax_Pay}", background="#FFFFFF")
                 Post_Tax_Income_Label.grid(row=5, column=0, pady=4)
-
+                
                 def ClearAll():
                     Pre_Tax_Income_Label.after(0, Pre_Tax_Income_Label.destroy())
                     Income_Getting_Taxed_Label.after(0, Income_Getting_Taxed_Label.destroy())
                     Post_Tax_Income_Label.after(0, Post_Tax_Income_Label.destroy())
                     Clear_Button.after(0, Clear_Button.destroy())
                     
-                Clear_Button = Button(Top, text="Clear Above Results", command=ClearAll)
+                Clear_Button = Button(Top, text="Clear Above Results", command=ClearAll, background="#f93800", fg="#ffb500")
                 Clear_Button.grid(row=6, column=0, columnspan=3, pady=4)
 
             # Setup for the 2nd Window
             Top = Toplevel()
             Top.title('Bi-Weekly Payroll')
-            Top.geometry("300x200")
+            Top.geometry("250x200")
+            Top.configure(background="#FFFFFF")
 
             # Input Box and Label for Hours Worked
-            Hour_Label = Label(Top, text="Hours Worked:")
+            Hour_Label = Label(Top, text="Hours Worked:", background="#FFFFFF")
             Hour_Label.grid(row=0, column=0)
 
-            Hour_Entry = Entry(Top, width=10)
+            Hour_Entry = Entry(Top, width=10, background="#FFFFFF")
             Hour_Entry.grid(row=0, column=1)
             Hour_Entry.insert(0, "Enter Here")
 
             # Input Box and Label for Hourly Wage
-            Wage_Label = Label(Top, text="Hourly Wage:")
+            Wage_Label = Label(Top, text="Hourly Wage:", background="#FFFFFF")
             Wage_Label.grid(row=1, column=0)
 
-            Wage_Entry = Entry(Top, width=10)
+            Wage_Entry = Entry(Top, width=10, background="#FFFFFF")
             Wage_Entry.grid(row=1, column=1)
             Wage_Entry.insert(0, "Enter Here")
 
             # Result Button After Inputs Have Been Made
-            Results_Button = Button(Top, text="Calculate Payroll", command= Bi_Weekly_Payroll_Calculation)
-            Results_Button.grid(row=2, column=0, columnspan=2, pady=4)
+            Calculate_Payroll_Button = Button(Top, text="Calculate Payroll", command= Bi_Weekly_Payroll_Calculation, background="#0f4d19", fg="#6fc27c")
+            Calculate_Payroll_Button.grid(row=2, column=0, columnspan=2, pady=4)
 
     # Weekly Payroll Widget Setup
-    Weekly_Payroll = Button(frame, padx=20, pady=10, fg="Black", bg="Red", text="Weekly Payroll", command= lambda: Payroll_Window('Weekly'))
+    Weekly_Payroll = Button(frame, padx=20, pady=10, fg="#b8df10", bg="#390879", text="Weekly Payroll", command= lambda: Payroll_Window('Weekly'))
     Weekly_Payroll.grid(row=0, column=0, padx=70, pady=20)
     
     # Bi-Weekly Payrool Widget Setup
-    Bi_Weekly_Payroll = Button(frame, padx=20,  pady=10, fg="Black", bg="Red", text="Bi-Weekly Payroll", command= lambda: Payroll_Window('Bi-Weekly'))
+    Bi_Weekly_Payroll = Button(frame, padx=20, pady=10, fg="#b8df10", bg="#390879", text="Bi-Weekly Payroll", command= lambda: Payroll_Window('Bi-Weekly'))
     Bi_Weekly_Payroll.grid(row=1, column=0, padx=70, pady=20)
 
     root.mainloop()
