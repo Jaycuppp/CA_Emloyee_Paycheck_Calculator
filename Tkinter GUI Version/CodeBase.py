@@ -106,10 +106,7 @@ def Run():
                     
                 Clear_Button = Button(Top, text="Clear Above Results", command=ClearAll, background=CustomRed, fg=CustomYellow)
                 Clear_Button.grid(row=6, column=0, columnspan=3, pady=4)
-                
-    
-
-            
+                           
             # Setup for the 2nd Window
             Top = Toplevel()
             Top.title('Weekly Payroll Calculator')
