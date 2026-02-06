@@ -35,8 +35,7 @@ The **CA Employee Paycheck Calculator** is a standalone desktop application desi
 ### For Developers (Local Setup):
 1. **Clone the Repo:**
    ```bash
-   git clone [https://github.com/Jaycuppp/CA_Emloyee_Paycheck_Calculator.git](https://github.com/Jaycuppp/CA_Emloyee_Paycheck_Calculator.git)
-   cd CA_Emloyee_Paycheck_Calculator
+   git clone https://github.com/Jaycuppp/CA_Emloyee_Paycheck_Calculator.git
    ```
 
 
